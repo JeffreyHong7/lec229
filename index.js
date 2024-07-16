@@ -36,7 +36,7 @@ app.post("/get-secret", async (req, res) => {
 app.post("/post-secret", async (req, res) => {
   // TODO 2: Use axios to POST the data from req.body to the secrets api servers.
   try {
-    const body = { secret: req.body.secret, scoe: req.body.score };
+    const body = { secret: req.body.secret, score: req.body.score };
     const response = await axios.post(API_URL + "/secrets", body, config);
     res.render("index.ejs", { content: JSON.stringify(response.data) });
   } catch (error) {
